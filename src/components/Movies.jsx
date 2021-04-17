@@ -9,9 +9,9 @@ class Movies extends Component {
     // axios.defaults = 'https://api.themoviedb.org/3';
     axios
       .get(
-        'https://api.themoviedb.org/3/trending/movie/day?api_key=0c26ad7fd1fc526007c784bb0321d6a5',
+        'https://api.themoviedb.org/3/genre/movie/list?api_key=0c26ad7fd1fc526007c784bb0321d6a5&language=en-US',
       )
-      .then(response => this.setState({ pop: response.data.results }));
+      .then(response => console.log(response.data));
   }
   render() {
     return <></>;

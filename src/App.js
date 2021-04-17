@@ -7,10 +7,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavLink to="/" className="navigation">
+          <NavLink to="/" exact className="navigation" activeClassName="active">
             HomePage
           </NavLink>
-          <NavLink to="/movies" className="navigation">
+          <NavLink to="/movies" className="navigation" activeClassName="active">
             Movies
           </NavLink>
         </header>

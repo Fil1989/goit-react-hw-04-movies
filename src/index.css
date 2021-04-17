@@ -11,11 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App {
+  padding-bottom: 40px;
+}
 .App-header {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: start;
   height: 50px;
   box-shadow: 0 2px rgba(0, 0, 0, 0.2);
 }
 .list {
   list-style: none;
+}
+.navigation {
+  margin-left: 20px;
+}
+.navigation.active {
+  color: tomato;
+}
+.movie_description {
+  display: flex;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+.poster {
+  width: 300px;
+  margin-right: 20px;
+}
+.aditional_info {
+  padding: 20px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+.go_back {
+  border: none;
+  background: none;
+  cursor: pointer;
 }

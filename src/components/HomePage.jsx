@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import MovieDescription from './MovieDescription';
+import { Link } from 'react-router-dom';
 class HomePage extends Component {
   state = {
     popular: [],
@@ -18,6 +17,7 @@ class HomePage extends Component {
       });
   }
   render() {
+    console.log(this.state.popular);
     return (
       <>
         <ul>
@@ -26,6 +26,14 @@ class HomePage extends Component {
               <Link
                 to={{
                   pathname: `/movies/${movie.id}`,
+                  state: {
+                    poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                    title: movie.title,
+                    score: `${movie.vote_average * 10}%`,
+                    overview: movie.overview,
+                    genre_ids: movie.genre_ids,
+                    id: movie.id,
+                  },
                 }}
               >
                 {movie.title}

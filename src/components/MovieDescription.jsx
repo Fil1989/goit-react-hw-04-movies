@@ -23,11 +23,15 @@ const MovieDescription = props => {
       </button>
       <section className="movie_description">
         {props.location.state.poster_path === null ? (
-          <img src={image} alt="alt" className="poster" />
+          <img
+            src={image}
+            alt={props.location.state.title}
+            className="poster"
+          />
         ) : (
           <img
             src={`https://image.tmdb.org/t/p/w500${props.location.state.poster_path}`}
-            alt="alt"
+            alt={props.location.state.title}
             className="poster"
           />
         )}

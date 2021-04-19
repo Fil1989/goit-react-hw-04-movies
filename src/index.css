@@ -47,3 +47,15 @@ code {
   background: none;
   cursor: pointer;
 }
+.actor_profile_picture {
+  width: 150px;
+  margin: 10px;
+}
+.cast,
+.reviews {
+  padding: 20px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+.atcors {
+  list-style: none;
+}

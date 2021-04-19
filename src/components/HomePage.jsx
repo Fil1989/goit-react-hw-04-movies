@@ -17,7 +17,6 @@ class HomePage extends Component {
       });
   }
   render() {
-    console.log(this.state.popular);
     return (
       <>
         <ul>
@@ -26,14 +25,7 @@ class HomePage extends Component {
               <Link
                 to={{
                   pathname: `/movies/${movie.id}`,
-                  state: {
-                    poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-                    title: movie.title,
-                    score: `${movie.vote_average * 10}%`,
-                    overview: movie.overview,
-                    genre_ids: movie.genre_ids,
-                    id: movie.id,
-                  },
+                  state: movie,
                 }}
               >
                 {movie.title}

@@ -12,7 +12,6 @@ class Reviews extends Component {
       )
       .then(response => {
         this.setState({ reviews: response.data.results });
-        console.log(response.data.results);
       })
       .catch(error => this.setState({ error }));
   }

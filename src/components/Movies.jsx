@@ -7,6 +7,17 @@ class Movies extends Component {
     movies: [],
     query: '',
   };
+  componentDidMount() {
+    if (this.props.location.state != null) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/movie?query=${this.props.location.state}&api_key=0c26ad7fd1fc526007c784bb0321d6a5&language=en-US&page=1&include_adult=false`,
+        )
+        .then(response => {
+          this.setState({ movies: response.data.results });
+        });
+    }
+  }
   handleSubmit = e => {
     e.preventDefault();
 
@@ -16,12 +27,10 @@ class Movies extends Component {
         `https://api.themoviedb.org/3/search/movie?query=${e.currentTarget[0].value}&api_key=0c26ad7fd1fc526007c784bb0321d6a5&language=en-US&page=1&include_adult=false`,
       )
       .then(response => {
-        console.log(response.data.results);
         this.setState({ movies: response.data.results });
       });
   };
   render() {
-    console.log(this.state.query);
     return (
       <>
         <FormComponent

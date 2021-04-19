@@ -13,7 +13,6 @@ class HomePage extends Component {
       )
       .then(response => {
         this.setState({ popular: response.data.results });
-        console.log(response.data.results);
       });
   }
   render() {

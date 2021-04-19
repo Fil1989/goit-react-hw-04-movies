@@ -17,7 +17,7 @@ code {
 .App-header {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   height: 50px;
   box-shadow: 0 2px rgba(0, 0, 0, 0.2);
 }

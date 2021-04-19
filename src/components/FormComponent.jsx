@@ -1,13 +1,16 @@
 import { Component } from 'react';
-// import { Route } from 'react-router-dom';
 class FormComponent extends Component {
-  handleChange(e) {
-    return e.currentTarget.value;
+  state = {
+    inputValue: '',
+  };
+  componentDidMount() {
+    this.setState({ inputValue: this.props.defaultValue || '' });
   }
+  handleChange = e => {
+    this.setState({ inputValue: e.currentTarget.value });
+  };
 
   render() {
-    console.log(this.props.defaultValue);
-
     return (
       <>
         <form onSubmit={this.props.onSubmit}>
@@ -16,7 +19,7 @@ class FormComponent extends Component {
             name="search"
             onChange={this.handleChange}
             placeholder="Search the movie"
-            // value={`${this.props.defaultValue}`}
+            value={this.state.inputValue}
           />
           <button type="submit">Submit</button>
         </form>

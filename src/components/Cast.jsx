@@ -5,8 +5,8 @@ class Cast extends Component {
   state = {
     actors: [],
   };
-  componentDidMount() {
-    axios
+  async componentDidMount() {
+    await axios
       .get(
         `https://api.themoviedb.org/3/movie/${this.props.location.state.id}/credits?api_key=0c26ad7fd1fc526007c784bb0321d6a5&language=en-US`,
       )

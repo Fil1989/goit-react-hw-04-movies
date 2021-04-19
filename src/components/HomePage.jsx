@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 class HomePage extends Component {
   state = {
     popular: [],
@@ -36,4 +37,5 @@ class HomePage extends Component {
     );
   }
 }
+
 export default HomePage;

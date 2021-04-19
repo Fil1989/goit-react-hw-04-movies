@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
+
 class FormComponent extends Component {
   state = {
     inputValue: '',
@@ -27,4 +29,8 @@ class FormComponent extends Component {
     );
   }
 }
+FormComponent.propTypes = {
+  defaultValue: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 export default FormComponent;

@@ -76,4 +76,5 @@ const MovieDescription = props => {
     </>
   );
 };
+
 export default MovieDescription;

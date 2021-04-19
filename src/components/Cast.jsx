@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
+import image from '../images/nophoto.jpg';
 
 class Cast extends Component {
   state = {
@@ -21,11 +22,15 @@ class Cast extends Component {
         <ul>
           {this.state.actors.map(({ profile_path, name, character, id }) => (
             <li key={id} className="atcors">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                alt={name}
-                className="actor_profile_picture"
-              />
+              {profile_path === null ? (
+                <img src={image} alt={name} className="actor_profile_picture" />
+              ) : (
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                  alt={name}
+                  className="actor_profile_picture"
+                />
+              )}
               <p>⦁ {name}</p>
               <p>&nbsp;&nbsp;Character: {character}</p>
             </li>

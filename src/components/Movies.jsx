@@ -14,7 +14,10 @@ class Movies extends Component {
           `https://api.themoviedb.org/3/search/movie?query=${this.props.location.state}&api_key=0c26ad7fd1fc526007c784bb0321d6a5&language=en-US&page=1&include_adult=false`,
         )
         .then(response => {
-          this.setState({ movies: response.data.results });
+          this.setState({
+            movies: response.data.results,
+            query: this.props.location.state,
+          });
         });
     }
   }

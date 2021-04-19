@@ -2,6 +2,7 @@ import genres from './genres';
 import { Route, Link } from 'react-router-dom';
 import Cast from './Cast';
 import Reviews from './Reviews';
+import image from '../images/nophoto.jpg';
 
 const MovieDescription = props => {
   const moovieGenres = genres.filter(({ id }) =>
@@ -21,11 +22,16 @@ const MovieDescription = props => {
         ←Go Back
       </button>
       <section className="movie_description">
-        <img
-          src={`https://image.tmdb.org/t/p/w500${props.location.state.poster_path}`}
-          alt="alt"
-          className="poster"
-        />
+        {props.location.state.poster_path === null ? (
+          <img src={image} alt="alt" className="poster" />
+        ) : (
+          <img
+            src={`https://image.tmdb.org/t/p/w500${props.location.state.poster_path}`}
+            alt="alt"
+            className="poster"
+          />
+        )}
+
         <div>
           <h2>{props.location.state.title}</h2>
           <p>User score: {`${props.location.state.vote_average * 10}%`}</p>

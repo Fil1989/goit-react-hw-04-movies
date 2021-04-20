@@ -13,8 +13,10 @@ const MovieDescription = props => {
       <button
         onClick={() =>
           props.history.push({
-            pathname: '/movies',
-            state: props.location.state.query,
+            pathname: props.location.state.from,
+            // pathname: props.location.state.from,
+
+            state: props.location.state.query || '',
           })
         }
         className="go_back"
@@ -70,7 +72,6 @@ const MovieDescription = props => {
           </li>
         </ul>
       </section>
-
       <Route path="/movies/:id/cast" component={Cast} />
       <Route path="/movies/:id/reviews" component={Reviews} />
     </>

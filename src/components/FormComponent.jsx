@@ -30,7 +30,7 @@ class FormComponent extends Component {
   }
 }
 FormComponent.propTypes = {
-  defaultValue: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
 };
 export default FormComponent;

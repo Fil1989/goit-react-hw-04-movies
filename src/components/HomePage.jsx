@@ -25,7 +25,7 @@ class HomePage extends Component {
               <Link
                 to={{
                   pathname: `/movies/${movie.id}`,
-                  state: movie,
+                  state: { ...movie, from: this.props.match.url },
                 }}
               >
                 {movie.title}

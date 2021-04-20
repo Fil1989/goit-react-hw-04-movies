@@ -47,7 +47,11 @@ class Movies extends Component {
                 to={{
                   pathname: `/movies/${movie.id}`,
                   //   state: { movie: movie, query: this.state.query },
-                  state: { ...movie, query: this.state.query },
+                  state: {
+                    ...movie,
+                    query: this.state.query,
+                    from: this.props.match.url,
+                  },
                 }}
               >
                 {movie.title}

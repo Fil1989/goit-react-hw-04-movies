@@ -1,4 +1,3 @@
-import React, { Suspense } from 'react';
 import genres from './genres';
 import { Route, Link } from 'react-router-dom';
 import Cast from './Cast';
